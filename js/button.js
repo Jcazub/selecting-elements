@@ -3,9 +3,9 @@ var colors = ['pink', 'green', 'blue', 'purple', 'red'];
 var clicks = 0;
 var bClicks = 0;
 
-// changeBg.addEventListener('click', function () {changeBg.style.backgroundColor = colors[0];}); //addEventListener must take 2 arguements, an event to listen for and something to do when that event is triggered.
+// changeBg.addEventListener('click', function () {changeBg.style.backgroundColor = colors[0];});
 
-changeBg.addEventListener('click', function() {
+changeBg.addEventListener('click', function() { //addEventListener must take 2 arguements, an event to listen for and something to do when that event is triggered.
   changeBg.style.backgroundColor = colors[clicks];
   clicks++;
   if (clicks === colors.length) {
@@ -14,7 +14,7 @@ changeBg.addEventListener('click', function() {
 });
 
 
-function changeBodyColor () {
+function changeBodyColor () { //a seperate function that can be referrenced throughout the document, unlike the function impelmented in the listnener event above
   document.body.style.backgroundColor = colors[bClicks];
   bClicks++;
   if (bClicks === colors.length) {
@@ -22,7 +22,7 @@ function changeBodyColor () {
   }
 }
 
-changeBg.addEventListener('click', changeBodyColor);
+changeBg.addEventListener('click', changeBodyColor); //makes use of the above function instead of defining the function in the event listener
 
 
 //randomize the background color
